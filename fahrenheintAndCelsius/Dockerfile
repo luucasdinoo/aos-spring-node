@@ -11,6 +11,6 @@ FROM openjdk:21-slim
 
 EXPOSE 8080
 
-COPY --from=build /target/mysimpleapp-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /target/fahrenheintAndCelsius-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
