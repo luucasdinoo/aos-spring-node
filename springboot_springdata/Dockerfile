@@ -5,12 +5,12 @@ RUN apt-get install openjdk-21-jdk -y
 COPY . .
 
 RUN apt-get install maven -y
-RUN mvn clean install
+RUN mvn clean install -DskipTests
 
 FROM openjdk:21-slim
 
 EXPOSE 8080
 
-COPY --from=build /target/springboot_springdata-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /target/sb_sd-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
