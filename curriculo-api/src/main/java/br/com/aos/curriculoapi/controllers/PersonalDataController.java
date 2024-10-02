@@ -1,0 +1,39 @@
+package br.com.aos.curriculoapi.controllers;
+
+import br.com.aos.curriculoapi.model.entities.PersonalData;
+import br.com.aos.curriculoapi.model.services.PersonalDataService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/personalInfo")
+public class PersonalDataController {
+
+    private final PersonalDataService personalDataService;
+
+    @Autowired
+    public PersonalDataController(PersonalDataService personalDataService) {
+        this.personalDataService = personalDataService;
+    }
+
+    @PostMapping
+    public ResponseEntity<PersonalData> createPersonalData(@RequestBody PersonalData request) {
+        PersonalData createdData = personalDataService.save(request);
+        return ResponseEntity.status(201).body(createdData);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<PersonalData> getPersonalData(@PathVariable Long id){
+        PersonalData personalData = personalDataService.findById(id);
+        return ResponseEntity.status(200).body(personalData);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<PersonalData>> getAllPersonalData(){
+        List<PersonalData> listPersonalData = personalDataService.findAll();
+        return ResponseEntity.status(200).body(listPersonalData);
+    }
+}
