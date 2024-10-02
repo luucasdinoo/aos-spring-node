@@ -1,5 +1,6 @@
 package br.com.aos.curriculoapi.model.services;
 
+import br.com.aos.curriculoapi.model.entities.PersonalData;
 import br.com.aos.curriculoapi.model.entities.Skill;
 import br.com.aos.curriculoapi.model.repositories.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,17 @@ public class SkillService {
     public void delete(Long id){
         Skill data = findById(id);
         skillRepository.delete(data);
+    }
+
+    public void update(Long id, Skill newData){
+        Skill oldData = findById(id);
+        skillRepository.save(updateData(oldData, newData));
+    }
+
+    private Skill updateData(Skill data, Skill newData) {
+        data.setName(newData.getName());
+        data.setLevel(newData.getLevel());
+
+        return data;
     }
 }

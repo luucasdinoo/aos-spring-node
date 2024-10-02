@@ -37,4 +37,16 @@ public class PersonalDataController {
         List<PersonalData> listPersonalData = personalDataService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(listPersonalData);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updatePersonalData(@PathVariable Long id, @RequestBody PersonalData request){
+        personalDataService.update(id, request);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSkill(@PathVariable Long id){
+        personalDataService.delete(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }

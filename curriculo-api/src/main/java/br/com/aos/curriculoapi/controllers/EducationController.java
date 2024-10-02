@@ -1,6 +1,7 @@
 package br.com.aos.curriculoapi.controllers;
 
 import br.com.aos.curriculoapi.model.entities.Education;
+import br.com.aos.curriculoapi.model.entities.Skill;
 import br.com.aos.curriculoapi.model.services.EducationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,5 +37,17 @@ public class EducationController {
     public ResponseEntity<List<Education>> getAllEducations(){
         List<Education> response = educationService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updatePersonalData(@PathVariable Long id, @RequestBody Education request){
+        educationService.update(id, request);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSkill(@PathVariable Long id){
+        educationService.delete(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

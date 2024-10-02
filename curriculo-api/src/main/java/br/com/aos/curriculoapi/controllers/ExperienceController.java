@@ -37,4 +37,16 @@ public class ExperienceController {
         List<Experience> response = experienceService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updateEducation(@PathVariable Long id, @RequestBody Experience request){
+        experienceService.update(id, request);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSkill(@PathVariable Long id){
+        experienceService.delete(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }

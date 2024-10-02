@@ -1,6 +1,7 @@
 package br.com.aos.curriculoapi.model.services;
 
 import br.com.aos.curriculoapi.model.entities.Education;
+import br.com.aos.curriculoapi.model.entities.Experience;
 import br.com.aos.curriculoapi.model.repositories.EducationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,19 @@ public class EducationService {
     public void delete(Long id){
         Education data = findById(id);
         educationRepository.delete(data);
+    }
+
+    public void update(Long id, Education newData){
+        Education oldData = findById(id);
+        educationRepository.save(updateData(oldData, newData));
+    }
+
+    private Education updateData(Education data, Education newData) {
+        data.setInstitution(newData.getInstitution());
+        data.setCourse(newData.getCourse());
+        data.setDegree(newData.getDegree());
+        data.setPeriod(newData.getPeriod());
+
+        return data;
     }
 }

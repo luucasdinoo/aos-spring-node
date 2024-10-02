@@ -34,4 +34,25 @@ public class PersonalDataService {
         PersonalData data = findById(id);
         personalDataRepository.delete(data);
     }
+
+    public void update(Long id, PersonalData newData){
+        PersonalData oldData = findById(id);
+        personalDataRepository.save(updateData(oldData, newData));
+    }
+
+    private PersonalData updateData(PersonalData data, PersonalData newData) {
+        data.setName(newData.getName());
+        data.setEmail(newData.getEmail());
+        data.setPhone(newData.getPhone());
+        data.setAddressStreet(newData.getAddressStreet());
+        data.setAddressCity(newData.getAddressCity());
+        data.setAddressState(newData.getAddressState());
+        data.setAddressCountry(newData.getAddressCountry());
+        data.setAddressZip(newData.getAddressZip());
+        data.setLinkedinLink(newData.getLinkedinLink());
+        data.setGithubLink(newData.getGithubLink());
+        data.setAbout(newData.getAbout());
+
+        return data;
+    }
 }

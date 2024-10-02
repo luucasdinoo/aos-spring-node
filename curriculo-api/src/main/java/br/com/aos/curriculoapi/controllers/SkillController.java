@@ -1,5 +1,6 @@
 package br.com.aos.curriculoapi.controllers;
 
+import br.com.aos.curriculoapi.model.entities.PersonalData;
 import br.com.aos.curriculoapi.model.entities.Skill;
 import br.com.aos.curriculoapi.model.services.SkillService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,17 @@ public class SkillController {
     public ResponseEntity<List<Skill>> getAllSkills(){
         List<Skill> response = skillService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updatePersonalData(@PathVariable Long id, @RequestBody Skill request){
+        skillService.update(id, request);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSkill(@PathVariable Long id){
+        skillService.delete(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
