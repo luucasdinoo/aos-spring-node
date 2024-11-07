@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import "dotenv/config";
-import { AppDataSource } from "@database/index";
+import { AppDataSource } from "@database/data-source";
 import express from "express";
 import { routes } from "./routes/index";
 

@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm';
 import { IExperienceRepository } from './interface/IExperienceRepository';
-import { AppDataSource } from '@database/index';
+import { AppDataSource } from '@database/data-source';
 import { Experience } from '../entities/Experience';
 import { ICreateExperienceDTO } from '../dtos/ICreateExperienceDTO';
 import { IUpdateExperienceDTO } from '../dtos/IUpdateExperienceDTO';

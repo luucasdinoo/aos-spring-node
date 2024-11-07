@@ -9,10 +9,10 @@ module.exports = {
             "module-resolver",
             {
                 alias: {
-                    "@modules": ["./src/modules"],
-                    "@shared": ["./src/shared"],
-                    "@errors": ["./src/errors"],
-                    "@database": ["./src/database"],
+                    "@modules": "./src/modules",
+                    "@shared": "./src/shared",
+                    "@errors": "./src/errors",
+                    "@database": "./src/database",
                 }
             }
         ],
