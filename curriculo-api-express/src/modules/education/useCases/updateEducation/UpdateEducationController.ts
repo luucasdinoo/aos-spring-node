@@ -3,7 +3,7 @@ import { container } from "tsyringe";
 import { UpdateEducationService } from "./UpdateEducationService";
 
 export class UpdateEducationController{
-    async handle(req: Request, res: Response): Promise<Response>{
+    async handle(req: Request, res: Response): Promise<void>{
         const { id } = req.params;
         const { institution, course, degree, period } = req.body;
         const updateEducationService = container.resolve(UpdateEducationService);
@@ -15,6 +15,6 @@ export class UpdateEducationController{
             period,
         });
 
-        return res.status(204).send();
+        res.status(204).send();
     }
 }

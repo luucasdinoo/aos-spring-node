@@ -3,10 +3,10 @@ import { container } from 'tsyringe';
 import { ListExperienceService } from './ListExperienceService';
 
 export class ListExperienceController {
-  async handle(req: Request, res: Response): Promise<Response> {
+  async handle(req: Request, res: Response): Promise<void> {
     const listExperienceService = container.resolve(ListExperienceService);
 
     const experiences = await listExperienceService.execute();
-    return res.status(200).json(experiences);
+    res.status(200).json(experiences);
   }
 }

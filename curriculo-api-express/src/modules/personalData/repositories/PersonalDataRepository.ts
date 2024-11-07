@@ -3,7 +3,7 @@ import { ICreatePersonalDataDTO } from '../dtos/ICreatePersonalDataDTO';
 import { IUpdatePersonalDataDTO } from '../dtos/IUpdatePersonalDataDTO';
 import { PersonalData } from '../entities/PersonalData';
 import { IPersonalDataRepository } from './interface/IPersonalDataRepository';
-import { AppDataSource } from '@database/data-source';
+import { AppDataSource } from '@database/index';
 
 export class PersonalDataRepository implements IPersonalDataRepository {
   private repository: Repository<PersonalData>;

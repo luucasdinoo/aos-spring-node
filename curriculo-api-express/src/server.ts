@@ -1,8 +1,8 @@
-import { AppDataSource } from "@database/data-source";
+import "reflect-metadata";
 import "dotenv/config";
-import "@shared/container";
+import { AppDataSource } from "@database/index";
 import express from "express";
-import { routes } from "routes";
+import { routes } from "./routes/index";
 
 const app = express();
 

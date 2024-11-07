@@ -2,8 +2,8 @@ import { Repository } from "typeorm";
 import { ICreateEducationDTO } from "../dtos/ICreateEducationDTO";
 import { IEducationRepository } from "./interface/IEducationRepository";
 import { Education } from "../entities/Education";
-import { AppDataSource } from "@database/data-source";
-import { IUpdateEducationDTO } from "../dtos/ICreateEducationDTO copy";
+import { AppDataSource } from "@database/index";
+import { IUpdateEducationDTO } from "../dtos/IUpdateEducationDTO";
 
 export class EducationRepository implements IEducationRepository{
     private repository: Repository<Education>;

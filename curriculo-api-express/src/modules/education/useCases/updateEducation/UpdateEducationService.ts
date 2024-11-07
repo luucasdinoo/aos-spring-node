@@ -1,4 +1,4 @@
-import { IUpdateEducationDTO } from '@modules/education/dtos/ICreateEducationDTO copy';
+import { IUpdateEducationDTO } from '@modules/education/dtos/IUpdateEducationDTO';
 import { IEducationRepository } from '@modules/education/repositories/interface/IEducationRepository';
 import { inject, injectable } from 'tsyringe';
 

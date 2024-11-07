@@ -3,7 +3,7 @@ import { container } from 'tsyringe';
 import { UpdateExperienceService } from './UpdateExperienceService';
 
 export class UpdateExperienceController {
-  async handle(req: Request, res: Response): Promise<Response> {
+  async handle(req: Request, res: Response): Promise<void> {
     const { id } = req.params;
     const {
       title,
@@ -26,6 +26,6 @@ export class UpdateExperienceController {
       end_date,
     });
 
-    return res.status(204).send();
+    res.status(204).send();
   }
 }

@@ -1,6 +1,6 @@
-import { ICreateEducationDTO } from "@modules/curriculum/dtos/ICreateEducationDTO"
-import { IUpdateEducationDTO } from "@modules/curriculum/dtos/ICreateEducationDTO copy";
-import { Education } from "@modules/curriculum/entities/Education";
+import { ICreateEducationDTO } from "@modules/education/dtos/ICreateEducationDTO";
+import { IUpdateEducationDTO } from "@modules/education/dtos/IUpdateEducationDTO";
+import { Education } from "@modules/education/entities/Education";
 
 interface IEducationRepository {
     create(data: ICreateEducationDTO): Promise<Education>;

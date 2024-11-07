@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "build-babel": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
-    "vercel-build": "npm run typeorm migration:run -- -d ./src/database/data-source.ts"
-  },
+    "build": "tsc"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",

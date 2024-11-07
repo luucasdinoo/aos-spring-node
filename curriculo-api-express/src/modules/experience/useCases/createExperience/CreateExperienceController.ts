@@ -3,7 +3,7 @@ import { container } from 'tsyringe';
 import { CreateExperienceService } from './CreateExperienceService';
 
 export class CreateExperienceController {
-  async handle(req: Request, res: Response): Promise<Response> {
+  async handle(req: Request, res: Response): Promise<void> {
     const {
       title,
       description,
@@ -24,6 +24,6 @@ export class CreateExperienceController {
       start_date,
       end_date,
     });
-    return res.status(201).json(experience);
+    res.status(201).json(experience);
   }
 }
