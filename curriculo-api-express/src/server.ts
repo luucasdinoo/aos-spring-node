@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import "dotenv/config";
+import "./shared/container"
 import cors from "cors";
 import { AppDataSource } from "@database/data-source";
 import express from "express";
