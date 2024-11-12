@@ -10,6 +10,8 @@ export class CreateEducationTable1730594025502 implements MigrationInterface {
                     name: "id",
                     type: "int",
                     isPrimary: true,
+                    isGenerated: true,
+                    generationStrategy: 'increment',
                 },
                 {
                     name: "institution",

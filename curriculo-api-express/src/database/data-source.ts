@@ -11,5 +11,5 @@ export const AppDataSource = new DataSource({
   logging: true,
   entities: [Education, Experience, PersonalData],
   //subscribers: [],
-  migrations: ['./dist/database/migrations/*ts'],
+  migrations: ['./src/database/migrations/*ts'],
 });

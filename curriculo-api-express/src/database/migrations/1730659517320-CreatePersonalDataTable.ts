@@ -12,6 +12,8 @@ export class CreatePersonalDataTable1730659517320
             name: 'id',
             type: 'int',
             isPrimary: true,
+            isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'name',
